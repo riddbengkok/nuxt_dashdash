@@ -15,6 +15,6 @@ export default defineNuxtConfig({
         { name: 'description', content: 'Nuxt 3' }
       ]
     },
-    baseURL: '/nuxt_dashdash',
+    baseURL: '/nuxt_dashdash/',
   }
 })
