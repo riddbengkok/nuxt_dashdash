@@ -1,0 +1,1 @@
+import{c as a,o as s,a as t,v as o}from"./B4JIGLQQ.js";const n={class:"min-h-screen"},_={__name:"auth",setup(r){return(e,c)=>(s(),a("div",n,[t("main",null,[o(e.$slots,"default")])]))}};export{_ as default};
