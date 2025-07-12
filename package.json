@@ -8,12 +8,23 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "deploy": "gh-pages -d dist"
+    "deploy": "nuxt generate && gh-pages -d .output/public"
   },
   "dependencies": {
-    "gh-pages": "^6.3.0",
+    "firebase": "^11.10.0",
     "nuxt": "^3.17.6",
     "vue": "^3.5.17",
     "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/vue-fontawesome": "^3.0.8",
+    "@heroicons/vue": "^2.2.0",
+    "@nuxtjs/google-fonts": "^3.2.0",
+    "@nuxtjs/tailwindcss": "^6.14.0",
+    "@tailwindcss/postcss": "^4.1.11",
+    "daisyui": "^5.0.46",
+    "gh-pages": "^6.3.0"
   }
 }
