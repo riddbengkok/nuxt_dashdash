@@ -2,7 +2,12 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
-  ssr: true,
+  ssr: false,
+  nitro: {
+    prerender: {
+      routes: ['/']
+    }
+  },
   app: {
     head: {
       title: 'Nuxt 3',
@@ -10,6 +15,6 @@ export default defineNuxtConfig({
         { name: 'description', content: 'Nuxt 3' }
       ]
     },
-    baseURL: '/',
+    baseURL: '/nuxt_dashdash',
   }
 })
