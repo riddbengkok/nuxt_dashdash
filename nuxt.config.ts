@@ -3,9 +3,13 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/google-fonts'],
+  css: ['~/assets/main.css'],
   
   // Bundle analyzer and optimization configuration
   vite: {
+    css: {
+      devSourcemap: true,
+    },
     build: {
       rollupOptions: {
         output: {
@@ -120,7 +124,6 @@ export default defineNuxtConfig({
       ]
     },
     // Set baseURL for GitHub Pages deployment
-    // baseURL: '/nuxt_dashdash/',
     baseURL: process.env.NODE_ENV === 'production' && process.env.PREVIEW !== 'true' ? '/nuxt_dashdash/' : '/',
     cdnURL: process.env.NODE_ENV === 'production' && process.env.PREVIEW !== 'true' ? '/nuxt_dashdash/' : '/',
     // Define specific build assets directory (relative to baseURL)

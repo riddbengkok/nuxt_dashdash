@@ -11,9 +11,9 @@
     "analyze": "nuxt build",
     "analyze:build": "npm run generate && node scripts/analyze.js",
     "analyze:detailed": "npm run generate && node scripts/detailed-analyze.js",
-    "preview": "npx serve .output/public",
-    "preview:local": "npm run generate && npx serve .output/public",
-    "preview:prod": "npm run generate && npx serve .output/public"
+    "preview": "node scripts/serve-preview.cjs",
+    "preview:local": "npm run generate && node scripts/serve-preview.cjs",
+    "preview:prod": "npm run generate && node scripts/serve-preview.cjs"
   },
   "dependencies": {
     "firebase": "^11.10.0",
