@@ -3,17 +3,17 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "cross-env NODE_ENV=production nuxt build",
+    "build": "nuxt build",
     "dev": "nuxt dev",
-    "generate": "cross-env NODE_ENV=production nuxt generate",
+    "generate": "nuxt generate",
     "postinstall": "nuxt prepare",
-    "deploy": "nuxt generate && gh-pages -d .output/public",
-    "analyze": "cross-env NODE_ENV=production ANALYZE=true nuxt build",
-    "analyze:build": "pnpm run generate && node scripts/analyze.js",
-    "analyze:detailed": "pnpm run generate && node scripts/detailed-analyze.js",
-    "preview": "node scripts/preview.js",
-    "preview:local": "cross-env NODE_ENV=production PREVIEW=true nuxt generate && npx serve .output/public",
-    "preview:prod": "pnpm run generate && npx serve .output/public"
+    "deploy": "npm run generate && gh-pages -d .output/public",
+    "analyze": "nuxt build",
+    "analyze:build": "npm run generate && node scripts/analyze.js",
+    "analyze:detailed": "npm run generate && node scripts/detailed-analyze.js",
+    "preview": "npx serve .output/public",
+    "preview:local": "npm run generate && npx serve .output/public",
+    "preview:prod": "npm run generate && npx serve .output/public"
   },
   "dependencies": {
     "firebase": "^11.10.0",

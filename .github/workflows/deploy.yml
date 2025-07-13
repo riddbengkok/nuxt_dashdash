@@ -18,19 +18,14 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
       
-    - name: Setup pnpm
-      uses: pnpm/action-setup@v2
-      with:
-        version: 8
-        
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '18'
-        cache: 'pnpm'
+        cache: 'npm'
         
     - name: Install dependencies
-      run: pnpm install --no-frozen-lockfile
+      run: npm ci
       
     - name: Create .env.local
       run: |
@@ -46,7 +41,7 @@ jobs:
         EOF
       
     - name: Build
-      run: pnpm run generate
+      run: npm run generate
       
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
