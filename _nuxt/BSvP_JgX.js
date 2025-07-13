@@ -1,1 +1,0 @@
-import{_ as o}from"./DauerN8X.js";import{c as t,o as s,b as r,a as n,v as c}from"./B4JIGLQQ.js";import"./Va_888p5.js";import"./BIOjjMEG.js";import"./B-W1TiBx.js";const m={class:"min-h-screen bg-gray-50"},g={__name:"default",setup(_){return(e,i)=>{const a=o;return s(),t("div",m,[r(a),n("main",null,[c(e.$slots,"default")])])}}};export{g as default};
