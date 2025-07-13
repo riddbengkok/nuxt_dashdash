@@ -124,8 +124,8 @@ export default defineNuxtConfig({
       ]
     },
     // Set baseURL for all environments (same as local development)
-    baseURL: '/',
-    cdnURL: '/',
+    baseURL: '/nuxt_dashdash/',
+    cdnURL: '/nuxt_dashdash/',
     // Define specific build assets directory (relative to baseURL)
     buildAssetsDir: '/nuxt_dashdash/_nuxt/',
   }
