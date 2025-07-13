@@ -54,10 +54,7 @@ const server = createServer((req, res) => {
   const url = new URL(req.url, `http://localhost:${PORT}`);
   let path = url.pathname;
 
-  // Remove the baseURL prefix for local preview
-  if (path.startsWith('/nuxt_dashdash/')) {
-    path = path.replace('/nuxt_dashdash/', '/');
-  }
+  // No baseURL prefix handling needed - same settings for all environments
 
   // Default to index.html for root path
   if (path === '/') {
@@ -87,7 +84,7 @@ const server = createServer((req, res) => {
 server.listen(PORT, () => {
   console.log(`🚀 Preview server running at http://localhost:${PORT}`);
   console.log(`📁 Serving files from: ${PUBLIC_DIR}`);
-  console.log(`🔧 BaseURL handling: /nuxt_dashdash/ -> /`);
+  console.log(`🔧 BaseURL: / (same for all environments)`);
 });
 
 server.on('error', (error) => {

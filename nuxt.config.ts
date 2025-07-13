@@ -108,7 +108,7 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'static',
     prerender: {
-      routes: ['/nuxt_dashdash']
+      routes: ['/']
     }
   },
   app: {
@@ -123,9 +123,9 @@ export default defineNuxtConfig({
         { rel: 'preconnect', href: 'https://www.googleapis.com' }
       ]
     },
-    // Set baseURL for GitHub Pages deployment
-    baseURL: process.env.NODE_ENV === 'production' && process.env.PREVIEW !== 'true' ? '/nuxt_dashdash/' : '/',
-    cdnURL: process.env.NODE_ENV === 'production' && process.env.PREVIEW !== 'true' ? '/nuxt_dashdash/' : '/',
+    // Set baseURL for all environments (same as local development)
+    baseURL: '/',
+    cdnURL: '/',
     // Define specific build assets directory (relative to baseURL)
     buildAssetsDir: '/_nuxt/',
   }
