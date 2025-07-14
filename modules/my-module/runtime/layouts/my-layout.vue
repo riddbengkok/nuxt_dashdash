@@ -1,6 +1,9 @@
 <template>
   <div class="min-h-screen bg-gray-50 dark:bg-gray-900">
-    <!-- Dashboard Drawer with Sidebar (includes navigation) -->
+    <!-- Navigation Component -->
+    <Navigation />
+
+    <!-- Dashboard Drawer with Sidebar -->
     <DashboardDrawer>
       <!-- Main Content -->
       <main class="p-6">
@@ -9,7 +12,3 @@
     </DashboardDrawer>
   </div>
 </template>
-
-<script setup>
-  // The DashboardDrawer component will be auto-imported by Nuxt
-</script>

@@ -1,6 +1,7 @@
 <template>
   <div class="min-h-screen">
     <!-- Main Content -->
+    <Navigation />
     <main>
       <slot />
     </main>
@@ -8,5 +9,5 @@
 </template>
 
 <script setup>
-// Auth layout without navigation
-</script> 
+  // Auth layout without navigation
+</script>

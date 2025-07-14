@@ -7,20 +7,19 @@
 
 import { execSync } from 'child_process'
 import fs from 'fs'
-import path from 'path'
 
 function preview() {
   console.log('🚀 Starting local preview...')
-  
+
   // Check if .output/public exists
   const outputDir = '.output/public'
   if (!fs.existsSync(outputDir)) {
     console.log('📦 Building for local preview...')
     try {
       // Build for local development (without production baseURL)
-      execSync('cross-env NODE_ENV=development nuxt generate', { 
+      execSync('cross-env NODE_ENV=development nuxt generate', {
         stdio: 'inherit',
-        cwd: process.cwd()
+        cwd: process.cwd(),
       })
       console.log('✅ Build completed successfully!')
     } catch (error) {
@@ -28,16 +27,16 @@ function preview() {
       process.exit(1)
     }
   }
-  
+
   console.log('🌐 Starting local server...')
   console.log('📱 Your site will be available at: http://localhost:3000')
   console.log('🔄 Press Ctrl+C to stop the server')
-  
+
   try {
     // Start the server
-    execSync('npx serve .output/public', { 
+    execSync('npx serve .output/public', {
       stdio: 'inherit',
-      cwd: process.cwd()
+      cwd: process.cwd(),
     })
   } catch (error) {
     if (error.status === 130) {
@@ -49,4 +48,4 @@ function preview() {
 }
 
 // Run the preview
-preview() 
+preview()
