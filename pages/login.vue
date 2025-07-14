@@ -11,7 +11,7 @@
           <ShieldCheckIcon class="h-8 w-8 text-white" />
         </div>
         <h2 class="mt-6 text-3xl font-bold text-gray-900 dark:text-white">
-          Welcome back
+          Welcome {{ randomName }}
         </h2>
         <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
           Sign in to your account to continue
@@ -119,6 +119,13 @@
     ExclamationTriangleIcon,
     ShieldCheckIcon,
   } from '@heroicons/vue/24/outline'
+
+  // Generate a random name
+  const names = [
+    'Alex', 'Jordan', 'Taylor', 'Morgan', 'Casey', 'Riley', 'Skyler', 'Avery', 'Quinn', 'Jamie',
+    'Robin', 'Drew', 'Cameron', 'Reese', 'Peyton', 'Dakota', 'Emerson', 'Rowan', 'Finley', 'Sage'
+  ]
+  const randomName = names[Math.floor(Math.random() * names.length)]
 
   // Set layout for this page
   definePageMeta({

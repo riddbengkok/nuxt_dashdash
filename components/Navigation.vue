@@ -40,16 +40,6 @@
               <p class="text-gray-500 dark:text-gray-400">{{ user.email }}</p>
             </div>
           </div>
-
-          <!-- Sign Out Button -->
-          <button
-            @click="handleSignOut"
-            :disabled="isSigningOut"
-            class="btn btn-sm btn-neutral"
-          >
-            <span v-if="isSigningOut">Signing out...</span>
-            <span v-else>Sign out</span>
-          </button>
         </div>
       </div>
     </div>
@@ -60,24 +50,8 @@
   import { MoonIcon, SunIcon } from '@heroicons/vue/24/outline'
 
   // Use our auth composable
-  const { user, signOut } = useAuth()
-  const isSigningOut = ref(false)
+  const { user } = useAuth()
 
   // Use theme composable
   const { isDark, toggleTheme } = useTheme()
-
-  // Handle sign out
-  const handleSignOut = async () => {
-    try {
-      isSigningOut.value = true
-      console.log('Navigation: Starting sign out...')
-      await signOut()
-      console.log('Navigation: Sign out successful')
-      await navigateTo('/login')
-    } catch (err) {
-      console.error('Navigation: Sign out error:', err)
-    } finally {
-      isSigningOut.value = false
-    }
-  }
 </script>
