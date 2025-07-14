@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import tailwindcss from '@tailwindcss/vite'
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
@@ -86,6 +88,7 @@ export default defineNuxtConfig({
                 console.log('- Consider tree-shaking unused dependencies')
               },
             },
+            tailwindcss(),
           ]
         : [],
   },
@@ -143,6 +146,6 @@ export default defineNuxtConfig({
     baseURL: '/nuxt_dashdash/',
     cdnURL: '/nuxt_dashdash/',
     // Define specific build assets directory (relative to baseURL)
-    buildAssetsDir: '/nuxt_dashdash/_nuxt/',
+    buildAssetsDir: '/assets/',
   },
 })

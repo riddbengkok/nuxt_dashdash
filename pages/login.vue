@@ -87,7 +87,7 @@
           </div>
 
           <!-- Sign up link -->
-          <div class="text-center mt-6">
+          <!-- <div class="text-center mt-6">
             <p class="text-sm text-gray-600 dark:text-gray-400">
               Don't have an account?
               <a
@@ -97,7 +97,7 @@
                 Sign up
               </a>
             </p>
-          </div>
+          </div> -->
         </div>
       </div>
 
