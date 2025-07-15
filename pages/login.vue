@@ -68,10 +68,7 @@
           </div>
 
           <!-- Social Login Buttons -->
-          <div
-            v-if="!loading && !loadingTimeout"
-            class="mb-6 grid justify-center"
-          >
+          <div v-if="!loading && !loadingTimeout" class="grid justify-center">
             <button
               @click="handleGoogleSignIn"
               :disabled="isSigningIn"
@@ -105,9 +102,13 @@
       <div class="text-center text-xs text-gray-500 dark:text-gray-400">
         <p>By signing in, you agree to our</p>
         <p>
-          <a href="#" class="hover:underline">Terms of Service</a>
+          <NuxtLink to="/terms" class="hover:underline"
+            >Terms of Service</NuxtLink
+          >
           and
-          <a href="#" class="hover:underline">Privacy Policy</a>
+          <NuxtLink to="/privacy" class="hover:underline"
+            >Privacy Policy</NuxtLink
+          >
         </p>
       </div>
     </div>
@@ -122,8 +123,26 @@
 
   // Generate a random name
   const names = [
-    'Alex', 'Jordan', 'Taylor', 'Morgan', 'Casey', 'Riley', 'Skyler', 'Avery', 'Quinn', 'Jamie',
-    'Robin', 'Drew', 'Cameron', 'Reese', 'Peyton', 'Dakota', 'Emerson', 'Rowan', 'Finley', 'Sage'
+    'Alex',
+    'Jordan',
+    'Taylor',
+    'Morgan',
+    'Casey',
+    'Riley',
+    'Skyler',
+    'Avery',
+    'Quinn',
+    'Jamie',
+    'Robin',
+    'Drew',
+    'Cameron',
+    'Reese',
+    'Peyton',
+    'Dakota',
+    'Emerson',
+    'Rowan',
+    'Finley',
+    'Sage',
   ]
   const randomName = names[Math.floor(Math.random() * names.length)]
 

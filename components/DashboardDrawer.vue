@@ -170,6 +170,28 @@
                 <span>Dashboard</span>
               </NuxtLink>
             </li>
+            <li>
+              <NuxtLink
+                to="/tiktok"
+                class="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors text-gray-900 dark:text-white"
+              >
+                <svg
+                  class="h-5 w-5 text-pink-500"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M9 3v12a4 4 0 104 4h1"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <circle cx="17" cy="5" r="2" fill="currentColor" />
+                </svg>
+                <span>TikTok</span>
+              </NuxtLink>
+            </li>
 
             <li>
               <NuxtLink
