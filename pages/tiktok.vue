@@ -1,33 +1,24 @@
 <template>
-  <div class="space-y-6">
-    <div class="card bg-white dark:bg-gray-800 shadow">
-      <div class="card-body">
-        <h1 class="card-title text-black dark:text-white">
-          TikTok Integration
-        </h1>
-        <p class="text-gray-600 dark:text-gray-400">
+  <div
+    class="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900 py-12 px-4"
+  >
+    <div
+      class="w-full max-w-lg bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8"
+    >
+      <h1
+        class="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center"
+      >
+        TikTok Integration
+      </h1>
+      <div class="space-y-6">
+        <p class="text-gray-700 dark:text-gray-300 text-center">
           Connect your dashboard to TikTok and fetch your account data.
         </p>
-      </div>
-    </div>
-
-    <div class="card bg-white dark:bg-gray-800 shadow">
-      <div class="card-body">
-        <h3 class="card-title text-black dark:text-white mb-4">
-          Connect to TikTok
-        </h3>
-        <button class="btn btn-primary" @click="connectToTikTok">
+        <button class="btn btn-primary w-full" @click="connectToTikTok">
           Connect TikTok Account
         </button>
         <div v-if="error" class="alert alert-error mt-4">
           <span>{{ error }}</span>
-        </div>
-        <div v-if="tiktokData" class="mt-6">
-          <h4 class="font-bold mb-2">TikTok Data:</h4>
-          <pre
-            class="bg-gray-100 dark:bg-gray-700 p-2 rounded text-sm text-gray-800 dark:text-gray-200"
-            >{{ tiktokData }}</pre
-          >
         </div>
       </div>
     </div>
@@ -35,15 +26,24 @@
 </template>
 
 <script setup>
-  const error = ref('')
-  const tiktokData = ref('')
+  const clientKey = 'sbawzgzppzcpwr770v' // <-- Replace with your real client key!
 
-  // Placeholder for TikTok OAuth flow
+  const redirectUri = encodeURIComponent(
+    `${window.location.origin}/tiktok-callback`
+  ) // <-- Replace with your deployed callback URL
+  const scope = 'user.info.basic' // Add more scopes as needed
+
+  const error = ref('')
+
   function connectToTikTok() {
     error.value = ''
-    // TODO: Implement TikTok OAuth flow here
-    // For now, just show a placeholder
-    tiktokData.value =
-      'OAuth flow not implemented. See TikTok API docs: https://developers.tiktok.com/doc/login-kit-web/'
+    const state = Math.random().toString(36).substring(2, 15) // random string for CSRF protection
+    window.location.href =
+      `https://www.tiktok.com/v2/auth/authorize/` +
+      `?client_key=${clientKey}` +
+      `&response_type=code` +
+      `&scope=${scope}` +
+      `&redirect_uri=${redirectUri}` +
+      `&state=${state}`
   }
 </script>
